@@ -33,7 +33,7 @@ EPS_SMOOTH = 2.0**-400
 
 # Bits per SampleInBall index of the challenge sampler.
 KAPPA_IDX = 160
-LABRADOR_PROOF_KB = 110.0
+LABRADOR_PROOF_KB = 125.0
 KECCAK_CONSTRAINTS = 24 * 1600
 SHAKE256_RATE_BITS = 1088
 SHA3_384_RATE_BITS = 832
@@ -416,7 +416,7 @@ def sizes(p, cs):
     vk_i is stored rounded mod q_{ν_t}.  In the signature, c is an index into
     the challenge set, and z and h are Golomb–Rice coded with the standard
     deviation of their coefficients.  Nonce commitments, ciphertexts, ek and C
-    are sent uncompressed, and each ZK-LaBRADOR proof counts as 110 KB.
+    are sent uncompressed, and each ZK-LaBRADOR proof counts as 125 KB.
     Every *_bits entry is also returned as *_kb.
     """
     n, k, m, l = p.n, p.k, p.m, p.ell
@@ -930,7 +930,7 @@ def proof_table(sets, results, log2_qs):
                  "μ = SHA3-384(d_K ‖ m),\nb = H_non(W, m, K̂) = SampleMon(SHAKE256(d_W ‖ μ)), "
                  "c = H_sig(w̃, m, K̂) = SampleInBall(SHA3-384(μ ‖ Ser(w̃))) inside L_1; "
                  "one Keccak-f[1600] = 24·1600 binary constraints.\n"
-                 "Proof size: ≈ 110 KB per ZK-LaBRADOR proof with zero-knowledge, nearly constant in the input size.\n"
+                 "Proof size: ≈ 115–125 KB per ZK-LaBRADOR proof with zero-knowledge, nearly constant in the input size.\n"
                  "Witness: every bounded integer bit-decomposed (two Range decompositions), quotient widths from "
                  "the B_κ bounds.")
     return t
@@ -973,7 +973,7 @@ HEADER_LINES = [
     "Policy: every lattice instance ≥ 128 bits; each statistical term ≤ 2^−128; correctness ≤ 2^−128;",
     "        statistical blindness 2·ε_stat ≤ 2^−40; HE (BGV) and CS (BDLOP) with binary keys and coins,",
     "        B bounds in ℓ∞;",
-    "        ZK-LaBRADOR proofs taken as 110 KB each.",
+    "        ZK-LaBRADOR proofs taken as 125 KB each.",
     "Hardness: lattice-estimator, core-SVP (rough), minimum over attacks",
 ]
 
