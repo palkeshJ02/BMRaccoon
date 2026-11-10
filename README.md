@@ -32,5 +32,5 @@ extraction no-wrap inequalities, signature/public-key/ciphertext/commitment
 sizes, the SHA3-384/SHAKE256 nonlinear constraint count, and the communication
 table.
 
-The approximately 110 KB size of each ZK-LaBRADOR proof is an analytical input
+The approximately 115-125 KB size of each ZK-LaBRADOR proof is an analytical input
 from the cited implementation paper; it is not derived by this script.
